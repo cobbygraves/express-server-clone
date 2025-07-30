@@ -16,6 +16,11 @@ server.use(cors({
   allowedHeaders: ['Content-Type', 'X-CSRF-TOKEN']
 }))
 
+//testing route
+server.get('/', (req, res) => {
+  res.send('Server is running')
+})
+
 //user routes
 const usersRoutes = require('./routes/users')
 server.use('/user', usersRoutes)
