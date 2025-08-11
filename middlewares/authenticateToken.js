@@ -7,7 +7,8 @@ const authenticateToken = (req, res, next) => {
     return res.status(401).json({ message: 'Authentication required' })
   }
   const decodedToken = verifyJWTAccessToken(token)
-  if(!decodedToken) return res.status(403).json({ message: 'Invalid or expired token' })
+  if (!decodedToken)
+    return res.status(403).json({ message: 'Invalid or expired token' })
   req.user = decodedToken
   next()
 }
