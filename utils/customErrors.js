@@ -6,6 +6,14 @@ class BadRequestError extends Error {
   }
 }
 
+class NotFoundError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = 'NotFoundError'
+    this.status = 404
+  }
+}
+
 class UnauthorizedError extends Error {
   constructor(message) {
     super(message)
@@ -25,5 +33,6 @@ class ForbiddenError extends Error {
 module.exports = {
   BadRequestError,
   UnauthorizedError,
-  ForbiddenError
+  ForbiddenError,
+  NotFoundError
 }
